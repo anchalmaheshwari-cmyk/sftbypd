@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/WhatsApp Image 2025-09-18 at 17.26.03.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sqft by PD | High-End Real Estate Agent in Chennai</title>
+    <meta name="description" content="Plan your next big move with Chennai's luxury property expert — Sqft by PD. Specializing in premium homes and investment properties in Chennai's most sought-after neighborhoods." />
+    <meta property="og:title" content="Sqft by PD | High-End Real Estate Agent in Chennai" id="og-title" />
+    <meta property="og:description" content="Plan your next big move with Chennai's luxury property expert — Sqft by PD." id="og-description" />
+    <meta property="og:image" content="/WhatsApp Image 2025-09-18 at 17.26.03.jpeg" id="og-image" />
+    <meta property="og:type" content="website" />
+    <script>
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const listingId = urlParams.get('listing');
+        if (listingId) {
+          const supabaseUrl = 'https://zdyjnbfzdxtfbqcduobw.supabase.co';
+          fetch(`${supabaseUrl}/functions/v1/meta-tags?listing=${listingId}`)
+            .then(res => res.json())
+            .then(data => {
+              document.title = data.title;
+              document.getElementById('og-title').setAttribute('content', data.title);
+              document.getElementById('og-description').setAttribute('content', data.description);
+              document.getElementById('og-image').setAttribute('content', data.image);
+
+              // Remove any existing additional og:image tags
+              const existingImages = document.querySelectorAll('meta[property="og:image"]:not(#og-image)');
+              existingImages.forEach(img => img.remove());
+
+              // Add additional images if available
+              if (data.images && data.images.length > 1) {
+                const head = document.head;
+                for (let i = 1; i < data.images.length; i++) {
+                  const meta = document.createElement('meta');
+                  meta.setAttribute('property', 'og:image');
+                  meta.setAttribute('content', data.images[i]);
+                  head.appendChild(meta);
+                }
+              }
+            })
+            .catch(err => console.error('Error fetching meta tags:', err));
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
