@@ -156,8 +156,8 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
       </div>
 
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-lg font-bold mb-2 line-clamp-2">{listing.title}</h3>
-        <p className="text-2xl font-bold text-[#c0c0c0] mb-3">{listing.price}</p>
+        <h3 className="text-base font-bold mb-2 line-clamp-2">{listing.title}</h3>
+        <p className="text-xl font-bold text-[#c0c0c0] mb-3">{listing.price}</p>
 
         <div className="flex items-center space-x-3 mb-3 text-xs text-gray-300">
           <div className="flex items-center">
