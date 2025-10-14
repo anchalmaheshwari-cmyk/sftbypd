@@ -55,11 +55,11 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Header scrolled={scrolled} />
-      <div className="flex items-center justify-center pt-24 pb-0">
+      <div className="flex items-center justify-center pt-20 pb-0">
         <img
           src="/SQFT_DP_2 (1) copy.jpg"
           alt="sqft by PD"
-          className="w-64 h-auto object-cover"
+          className="w-48 h-auto object-cover"
           style={{ objectPosition: 'center', clipPath: 'inset(8% 8% 8% 8%)' }}
         />
       </div>
