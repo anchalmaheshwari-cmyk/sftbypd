@@ -56,6 +56,19 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
     }
   };
 
+  const getPropertyTypeDisplay = (type: string) => {
+    switch (type) {
+      case 'Rental':
+        return 'To Rent';
+      case 'Purchase':
+        return 'For Sale';
+      case 'Commercial Rental':
+        return 'Commercial Rental';
+      default:
+        return type;
+    }
+  };
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(listingUrl);
     setCopied(true);
@@ -112,7 +125,7 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
 
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
           <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getPropertyTypeColor(listing.property_type)}`}>
-            {listing.property_type}
+            {getPropertyTypeDisplay(listing.property_type)}
           </span>
           <div className="flex items-center space-x-2">
             <button

@@ -67,6 +67,19 @@ const ListingModal = ({ listing, onClose }: ListingModalProps) => {
     }
   };
 
+  const getPropertyTypeDisplay = (type: string) => {
+    switch (type) {
+      case 'Rental':
+        return 'To Rent';
+      case 'Purchase':
+        return 'For Sale';
+      case 'Commercial Rental':
+        return 'Commercial Rental';
+      default:
+        return type;
+    }
+  };
+
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 overflow-y-auto">
       <div className="min-h-screen px-4 py-8 flex items-center justify-center">
@@ -105,7 +118,7 @@ const ListingModal = ({ listing, onClose }: ListingModalProps) => {
 
               <div className="absolute top-4 left-4 flex items-center space-x-2">
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getPropertyTypeColor(listing.property_type)}`}>
-                  {listing.property_type}
+                  {getPropertyTypeDisplay(listing.property_type)}
                 </span>
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold ${isAvailable ? 'bg-green-500 text-white' : 'bg-gray-500 text-white'}`}>
                   {listing.status}

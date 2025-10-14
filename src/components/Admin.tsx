@@ -387,8 +387,8 @@ const Admin = () => {
                   onChange={(e) => updateField('property_type', e.target.value)}
                   className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-[#c0c0c0]"
                 >
-                  <option value="Purchase">Purchase</option>
-                  <option value="Rental">Rental</option>
+                  <option value="Purchase">For Sale</option>
+                  <option value="Rental">To Rent</option>
                   <option value="Commercial Rental">Commercial Rental</option>
                 </select>
               </div>

@@ -27,3 +27,16 @@ export interface Listing {
   created_at: string;
   updated_at: string;
 }
+
+export const getPropertyTypeDisplay = (type: string): string => {
+  switch (type) {
+    case 'Rental':
+      return 'To Rent';
+    case 'Purchase':
+      return 'For Sale';
+    case 'Commercial Rental':
+      return 'Commercial Rental';
+    default:
+      return type;
+  }
+};
