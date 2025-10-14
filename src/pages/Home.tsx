@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Header scrolled={scrolled} />
-      <div className="flex items-center justify-center pt-32 pb-2">
+      <div className="flex items-center justify-center pt-24 pb-0">
         <img
           src="/SQFT_DP_2 (1) copy.jpg"
           alt="sqft by PD"
