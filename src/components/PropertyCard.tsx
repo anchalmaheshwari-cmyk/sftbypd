@@ -164,10 +164,12 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
             <MapPin size={14} className="mr-1" />
             <span className="line-clamp-1">{listing.location}</span>
           </div>
-          <div className="flex items-center">
-            <Home size={14} className="mr-1" />
-            {listing.bhk} BHK
-          </div>
+          {listing.property_type !== 'Commercial Rental' && (
+            <div className="flex items-center">
+              <Home size={14} className="mr-1" />
+              {listing.bhk} BHK
+            </div>
+          )}
           <div className="flex items-center">
             <Maximize size={14} className="mr-1" />
             {listing.property_type === 'Commercial Rental' ? listing.size : `${listing.size} sqft`}

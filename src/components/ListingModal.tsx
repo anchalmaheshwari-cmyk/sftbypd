@@ -156,10 +156,12 @@ const ListingModal = ({ listing, onClose }: ListingModalProps) => {
                   <MapPin size={20} className="mr-2" />
                   {listing.location}
                 </div>
-                <div className="flex items-center">
-                  <Home size={20} className="mr-2" />
-                  {listing.bhk} BHK
-                </div>
+                {listing.property_type !== 'Commercial Rental' && (
+                  <div className="flex items-center">
+                    <Home size={20} className="mr-2" />
+                    {listing.bhk} BHK
+                  </div>
+                )}
                 <div className="flex items-center">
                   <Maximize size={20} className="mr-2" />
                   {listing.property_type === 'Commercial Rental' ? listing.size : `${listing.size} sqft`}
