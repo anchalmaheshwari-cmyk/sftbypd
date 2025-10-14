@@ -162,7 +162,7 @@ const ListingModal = ({ listing, onClose }: ListingModalProps) => {
                 </div>
                 <div className="flex items-center">
                   <Maximize size={20} className="mr-2" />
-                  {listing.size} sqft
+                  {listing.property_type === 'Commercial Rental' ? listing.size : `${listing.size} sqft`}
                 </div>
               </div>
 

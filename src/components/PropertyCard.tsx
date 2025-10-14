@@ -170,7 +170,7 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
           </div>
           <div className="flex items-center">
             <Maximize size={14} className="mr-1" />
-            {listing.size} sqft
+            {listing.property_type === 'Commercial Rental' ? listing.size : `${listing.size} sqft`}
           </div>
         </div>
 

@@ -349,11 +349,14 @@ const Admin = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Size (sq ft)</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Size {editingListing.property_type === 'Commercial Rental' ? '(e.g., 5000 sqft, 2 acres)' : '(sq ft)'}
+                </label>
                 <input
                   type="text"
                   value={editingListing.size || ''}
                   onChange={(e) => updateField('size', e.target.value)}
+                  placeholder={editingListing.property_type === 'Commercial Rental' ? 'Enter size with unit' : 'Enter size in sq ft'}
                   className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-[#c0c0c0]"
                 />
               </div>
