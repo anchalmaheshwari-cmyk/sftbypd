@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: clamp(14px, 1vw, 16px);
   }
 
   body {
@@ -12,7 +13,30 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Baskerville', 'Libre Baskerville', 'Times New Roman', serif;
+    font-family: 'Libre Baskerville', 'Baskerville', 'Times New Roman', serif;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: clamp(1.875rem, 4vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    line-height: 1.3;
+  }
+
+  p, li, a {
+    max-width: 75ch;
+  }
+
+  article, .prose {
+    max-width: 65ch;
   }
 }
 
