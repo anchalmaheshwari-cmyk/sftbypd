@@ -24,6 +24,7 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showShareModal, setShowShareModal] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -100,11 +101,17 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
       className={`bg-gray-800/50 rounded-lg overflow-hidden backdrop-blur-sm border border-gray-700 hover:border-[#c0c0c0] transition-all duration-300 cursor-pointer flex flex-col h-full ${!isAvailable && 'opacity-60'}`}
     >
       <div className="relative group">
-        <img
-          src={listing.images[currentImageIndex]}
-          alt={listing.title}
-          className="w-full h-64 object-cover"
-        />
+        <div className="relative w-full h-64 bg-gray-700 overflow-hidden">
+          {!imageLoaded && (
+            <div className="absolute inset-0 bg-gray-700 animate-pulse"></div>
+          )}
+          <img
+            src={listing.images[currentImageIndex]}
+            alt={listing.title}
+            className={`w-full h-64 object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setImageLoaded(true)}
+          />
+        </div>
 
         {listing.images.length > 1 && (
           <>

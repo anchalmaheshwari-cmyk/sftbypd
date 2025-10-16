@@ -5,14 +5,14 @@ const Contact = () => {
   const phoneNumber = "+918939929919";
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-gray-900 to-black">
+    <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Let's Talk <span className="text-[#c0c0c0]">sqft</span>
         </h2>
-        <div className="w-24 h-1 bg-[#c0c0c0] mx-auto mb-12"></div>
+        <div className="w-24 h-1 bg-[#c0c0c0] mx-auto mb-10"></div>
 
-        <p className="text-xl text-gray-300 mb-12">
+        <p className="text-lg text-gray-300 mb-10">
           Ready to find your dream property? Let's start the conversation.
         </p>
 

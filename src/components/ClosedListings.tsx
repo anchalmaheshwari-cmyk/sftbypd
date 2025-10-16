@@ -38,10 +38,10 @@ const ClosedListings = () => {
   }
 
   return (
-    <section id="closed-listings" className="py-24 bg-gradient-to-b from-gray-900 to-black">
+    <section id="closed-listings" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Archived <span className="text-[#c0c0c0]">Listings</span>
           </h2>
           <div className="w-24 h-1 bg-[#c0c0c0] mx-auto mb-4"></div>

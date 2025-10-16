@@ -8,6 +8,7 @@ const FeaturedProperty = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const fetchFeaturedListing = async () => {
@@ -49,9 +50,9 @@ const FeaturedProperty = () => {
 
   return (
     <>
-      <section id="featured" className="py-12 px-6 bg-gradient-to-b from-black via-gray-900 to-black">
+      <section id="featured" className="py-16 px-6 bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#c0c0c0]">
               Featured
             </h2>
@@ -62,10 +63,14 @@ const FeaturedProperty = () => {
             onClick={() => setShowModal(true)}
           >
             <div className="relative h-[400px] rounded-lg overflow-hidden">
+              {!imageLoaded && (
+                <div className="absolute inset-0 bg-gray-700 animate-pulse"></div>
+              )}
               <img
                 src={featuredListing.images[currentImageIndex]}
                 alt={featuredListing.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={() => setImageLoaded(true)}
               />
 
               {featuredListing.images.length > 1 && (
