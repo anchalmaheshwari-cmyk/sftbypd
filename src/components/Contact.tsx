@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
           Let's Talk <span className="text-[#c0c0c0]">sqft</span>
         </h2>
         <div className="w-24 h-1 bg-[#c0c0c0] mx-auto mb-10"></div>
@@ -36,9 +36,11 @@ const Contact = () => {
           </a>
         </div>
 
-        <div className="mt-12 flex items-center justify-center space-x-2 text-gray-400">
-          <Clock size={18} />
-          <p className="text-sm">Available 7 days a week for property tours and consultations</p>
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-2 text-gray-400">
+          <div className="flex items-center space-x-2">
+            <Clock size={18} />
+            <p className="text-sm">Available 7 days a week for property tours and consultations</p>
+          </div>
         </div>
       </div>
     </section>
