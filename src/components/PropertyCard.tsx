@@ -201,21 +201,21 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
         </div>
 
         {isAvailable && (
-          <div className="flex gap-3 mt-auto">
+          <div className="flex gap-2 mt-auto">
             <a
               href={callLink}
-              className="flex-1 bg-[#c0c0c0] text-black py-3 rounded-lg font-semibold hover:bg-[#a8a8a8] transition-all duration-300 flex items-center justify-center space-x-2"
+              className="flex-1 bg-[#c0c0c0] text-black py-2 rounded-lg text-sm font-semibold hover:bg-[#a8a8a8] transition-all duration-300 flex items-center justify-center space-x-1.5"
             >
-              <Phone size={20} />
+              <Phone size={16} />
               <span>Call</span>
             </a>
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 bg-[#25D366] text-white py-3 rounded-lg font-semibold hover:bg-[#20ba5a] transition-all duration-300 flex items-center justify-center space-x-2"
+              className="flex-1 bg-[#25D366] text-white py-2 rounded-lg text-sm font-semibold hover:bg-[#20ba5a] transition-all duration-300 flex items-center justify-center space-x-1.5"
             >
-              <MessageCircle size={20} />
+              <MessageCircle size={16} />
               <span>WhatsApp</span>
             </a>
           </div>
