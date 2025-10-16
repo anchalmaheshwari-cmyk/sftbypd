@@ -206,7 +206,7 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
               href={callLink}
               className="flex-1 bg-[#c0c0c0] text-black py-2 rounded-lg text-sm font-semibold hover:bg-[#a8a8a8] transition-all duration-300 flex items-center justify-center space-x-1.5"
             >
-              <Phone size={16} />
+              <Phone size={15} />
               <span>Call</span>
             </a>
             <a
@@ -215,7 +215,7 @@ const PropertyCard = ({ listing, onClick }: PropertyCardProps) => {
               rel="noopener noreferrer"
               className="flex-1 bg-[#25D366] text-white py-2 rounded-lg text-sm font-semibold hover:bg-[#20ba5a] transition-all duration-300 flex items-center justify-center space-x-1.5"
             >
-              <MessageCircle size={16} />
+              <MessageCircle size={15} />
               <span>WhatsApp</span>
             </a>
           </div>
