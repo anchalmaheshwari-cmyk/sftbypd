@@ -12,7 +12,7 @@ const Contact = () => {
         </h2>
         <div className="w-24 h-1 bg-[#c0c0c0] mx-auto mb-10"></div>
 
-        <p className="text-lg text-gray-300 mb-10">
+        <p className="text-lg text-gray-300 mb-10 text-center">
           Ready to find your dream property? Let's start the conversation.
         </p>
 
