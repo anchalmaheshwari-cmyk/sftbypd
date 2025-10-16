@@ -27,10 +27,10 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <div className="animate-fade-in">
-          <p className="text-4xl md:text-5xl text-gray-400 mb-6 font-light tracking-wide">
+          <p className="text-3xl md:text-4xl text-gray-400 mb-6 font-light tracking-wide">
             Chennai based high-end Real Estate Agent
           </p>
-          <h1 className="text-xl md:text-2xl font-bold mb-12 leading-tight text-[#c0c0c0]">
+          <h1 className="text-lg md:text-xl font-bold mb-12 leading-tight text-[#c0c0c0]">
             Plan <span className="text-white">your next big move</span> with me
           </h1>
           <Link
