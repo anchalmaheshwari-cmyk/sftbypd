@@ -161,77 +161,71 @@ const ActiveListings = ({ highlightedListingId }: ActiveListingsProps) => {
   return (
     <section id="listings" className="py-16 bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Currently <span className="text-[#c0c0c0]">Listed</span>
           </h2>
           <div className="w-24 h-1 bg-[#c0c0c0] mx-auto"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          <aside className="lg:w-80 flex-shrink-0">
-            <ListingFilters
-              filters={filters}
-              onFilterChange={setFilters}
-              availableLocations={availableLocations}
-            />
-          </aside>
+        <ListingFilters
+          filters={filters}
+          onFilterChange={setFilters}
+          availableLocations={availableLocations}
+        />
 
-          <div className="flex-1 min-w-0">
-            <div className="flex justify-between items-center mb-6">
-              <p className="text-gray-400">
-                {filteredAndSortedListings.length} {filteredAndSortedListings.length === 1 ? 'property' : 'properties'} found
-              </p>
-              <div className="flex items-center space-x-2">
-                <ArrowUpDown size={18} className="text-gray-400" />
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-                  className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#c0c0c0] transition-colors"
-                >
-                  <option value="default">Default</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="newest">Newest First</option>
-                </select>
-              </div>
-            </div>
-
-            {filteredAndSortedListings.length === 0 ? (
-              <div className="text-center py-16">
-                <p className="text-gray-400 text-lg">No properties match your filters.</p>
-                <button
-                  onClick={() => setFilters({
-                    search: '',
-                    propertyType: [],
-                    bhk: [],
-                    minPrice: '',
-                    maxPrice: '',
-                    location: [],
-                  })}
-                  className="mt-4 text-[#c0c0c0] hover:text-white transition-colors"
-                >
-                  Clear all filters
-                </button>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-fr">
-                {filteredAndSortedListings.map((listing) => (
-                <div
-                  key={listing.id}
-                  id={`listing-${listing.id}`}
-                  className={`flex ${highlightedListingId === listing.id ? 'animate-pulse-border' : ''}`}
-                >
-                  <PropertyCard
-                    listing={listing}
-                    onClick={() => setSelectedListing(listing)}
-                  />
-                </div>
-                ))}
-              </div>
-            )}
+        <div className="flex justify-between items-center mb-6">
+          <p className="text-gray-400">
+            {filteredAndSortedListings.length} {filteredAndSortedListings.length === 1 ? 'property' : 'properties'} found
+          </p>
+          <div className="flex items-center space-x-2">
+            <ArrowUpDown size={18} className="text-gray-400" />
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
+              className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#c0c0c0] transition-colors"
+            >
+              <option value="default">Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest First</option>
+            </select>
           </div>
         </div>
+
+        {filteredAndSortedListings.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="text-gray-400 text-lg">No properties match your filters.</p>
+            <button
+              onClick={() => setFilters({
+                search: '',
+                propertyType: [],
+                bhk: [],
+                minPrice: '',
+                maxPrice: '',
+                location: [],
+              })}
+              className="mt-4 text-[#c0c0c0] hover:text-white transition-colors"
+            >
+              Clear all filters
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+            {filteredAndSortedListings.map((listing) => (
+            <div
+              key={listing.id}
+              id={`listing-${listing.id}`}
+              className={`flex ${highlightedListingId === listing.id ? 'animate-pulse-border' : ''}`}
+            >
+              <PropertyCard
+                listing={listing}
+                onClick={() => setSelectedListing(listing)}
+              />
+            </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {selectedListing && (
