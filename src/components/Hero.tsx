@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden mt-8">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-90"></div>
 
       <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
