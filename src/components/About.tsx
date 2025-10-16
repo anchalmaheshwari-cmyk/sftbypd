@@ -1,12 +1,12 @@
 const About = () => {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
           About <span className="text-[#c0c0c0]">Sqft by PD</span>
         </h2>
         <div className="w-24 h-1 bg-[#c0c0c0] mx-auto mb-10"></div>
-        <div className="space-y-6 text-base text-gray-300 leading-relaxed text-center">
+        <div className="space-y-6 text-base text-gray-300 leading-relaxed">
           <p>
             I'm PD — a Chennai-based real estate advisor who found his passion by accident. While searching for a rental years ago, I realized how much of a grind the process could be — so I decided to change that.
           </p>
